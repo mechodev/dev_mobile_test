@@ -1,0 +1,75 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Node.js Design Patterns",
+      "price": 29.99,
+      "details": "Learn design patterns to build scalable and maintainable Node.js applications.",
+      "author": "Mario Casciaro"
+    },
+    {
+      "id": 2,
+      "title": "Eloquent JavaScript",
+      "price": 25.99,
+      "details": "A Modern Introduction to Programming.",
+      "author": "Marijn Haverbeke"
+    },
+    {
+      "id": 3,
+      "title": "JavaScript: The Good Parts",
+      "price": 22.99,
+      "details": "Unearthing the excellence in JavaScript.",
+      "author": "Douglas Crockford"
+    },
+    {
+      "id": 4,
+      "title": "You Don't Know JS: Scope & Closures",
+      "price": 19.99,
+      "details": "Deep dive into JavaScript's scope and closures.",
+      "author": "Kyle Simpson"
+    },
+    {
+      "id": 5,
+      "title": "Learn JavaScript Visually",
+      "price": 24.99,
+      "details": "A guide to learning JavaScript concepts through visual aids.",
+      "author": "Ivelin Demirov"
+    },
+    {
+      "id": 6,
+      "title": "JavaScript: The Definitive Guide",
+      "price": 39.99,
+      "details": "Master the World's Most-Used Programming Language.",
+      "author": "David Flanagan"
+    },
+    {
+      "id": 7,
+      "title": "Secrets of the JavaScript Ninja",
+      "price": 33.99,
+      "details": "A comprehensive guide to becoming a JavaScript expert.",
+      "author": "John Resig"
+    },
+    {
+      "id": 8,
+      "title": "Pro JavaScript Design Patterns",
+      "price": 28.99,
+      "details": "Mastering design patterns in JavaScript.",
+      "author": "Dustin Diaz"
+    },
+    {
+      "id": 9,
+      "title": "JavaScript Patterns",
+      "price": 27.99,
+      "details": "Build Better Applications with Coding and Design Patterns.",
+      "author": "Stoyan Stefanov"
+    },
+    {
+      "id": 10,
+      "title": "High Performance JavaScript",
+      "price": 21.99,
+      "details": "Build faster web application interfaces with JavaScript.",
+      "author": "Nicholas C. Zakas"
+    }
+  ],
+  "items": []
+}

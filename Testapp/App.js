@@ -1,41 +1,58 @@
 import React, { useEffect, useState } from "react";
-import { StyleSheet, Text, View, FlatList, StatusBar } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  FlatList,
+  StatusBar,
+  ActivityIndicator,
+} from "react-native";
 import axios from "axios";
-axios.defaults.baseURL = process.env.EXPO_PUBLIC_API_BASE_URL;
-axios.defaults.headers.common["Content-Type"] = "application/json";
-axios.defaults.withCredentials = true;
 export default function App() {
   const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get("http://localhost:3000/api/articles")
       .then((response) => {
         setItems(response.data);
-        console.log("====================================");
-        console.log(response.data);
+        setLoading(false);
       })
       .catch((error) => {
-        console.log("====================================");
-        console.log("====================================");
-        console.error("error", error);
+        setLoading(false);
       });
   }, []);
   return (
     <View style={styles.container}>
       <StatusBar />
-      <FlatList
-        data={items}
-        keyExtractor={(item) => item.id.toString()}
-        renderItem={({ item }) => (
-          <View style={styles.card}>
-            <Text style={styles.title}>{item.title}</Text>
-            <Text style={styles.author}>Author: {item.author}</Text>
-            <Text style={styles.details}>{item.details}</Text>
-            <Text style={styles.price}>Price: ${item.price.toFixed(2)}</Text>
-          </View>
-        )}
-      />
+      {loading ? (
+        <View
+          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+        >
+          <ActivityIndicator size={25} />
+        </View>
+      ) : (
+        <FlatList
+          data={items}
+          keyExtractor={(item) => item.id.toString()}
+          renderItem={({ item }) => (
+            <View style={styles.card}>
+              <Text style={styles.title}>{item.title}</Text>
+              <Text style={styles.author}>Author: {item.author}</Text>
+              <Text style={styles.details}>{item.details}</Text>
+              <Text style={styles.price}>Price: ${item.price.toFixed(2)}</Text>
+            </View>
+          )}
+          ListEmptyComponent={
+            <View style={{ alignItems: "center", justifyContent: "center" }}>
+              <Text>Aucune données disponible</Text>
+            </View>
+          }
+          showsVerticalScrollIndicator={false}
+        />
+      )}
     </View>
   );
 }
